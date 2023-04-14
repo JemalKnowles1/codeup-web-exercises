@@ -43,16 +43,18 @@ function schedule(){
 schedule()
 
 function product(){
-    var customerBuy = confirm('Has customer bought more than two items? Click Ok For Yes. ');
-    var offer = confirm('Has the Offer expired? Click Cancel for Yes.');
-    var premium = confirm('Are you premium customer? Click Ok For Yes. ');
-    if(customerBuy === true && offer === true) {
-        alert('You may continue with the order! ')
-    } else {
-        alert('Order will be canceled')
+            var customerBuy = confirm('Has customer bought more than two items? Click Ok For Yes. ');
+            var offer = confirm('Has the Offer expired? Click Cancel for Yes.');
+            if(customerBuy === true && offer === true) {
+                alert('You may continue with the order! ')
+            } else {
+                alert('Order will be canceled')
         {
+            var premium = confirm('Are you premium customer? Click Ok For Yes. ');
             if(premium === true) {
                 alert('You may continue with order! Thank you for being a premium member! ')
+            } else {
+                alert(' this order will be terminated. ')
             }
         }
     }

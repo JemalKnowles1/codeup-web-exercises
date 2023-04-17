@@ -5,14 +5,15 @@ alert("Hello, welcome to my website!");
 
 var userInput = prompt('What is your favorite color?');
 console.log('The user entered: ' + userInput);
-
 alert(userInput + "! That is also my favorite color!");
 
+
+//P3 Q1
 var userInput1 = prompt('You have rented the lil Merm for how days?');
 console.log('The user entered: ' + userInput1);
-var userInput2 = prompt('You have rented Brotha Bear for how many days:');
+var userInput2 = prompt('You have rented Brotha Bear for how many days?');
 console.log('The user entered: ' + userInput2);
-var userInput3 = prompt('You have rented Hercs for how many days');
+var userInput3 = prompt('You have rented Hercs for how many days?');
 console.log('The user entered: ' + userInput3);
 
 var price = (Number(userInput1) + Number(userInput2) + Number(userInput3)) * 3

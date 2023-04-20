@@ -53,24 +53,17 @@
  */
 function analyzeColor(colorName) {
     switch (colorName) {
-        case 'violet' :
-            return alert('violet is a beautiful color');
-        case 'red' :
+        case 'violet':
+            return alert(' violet is a beautiful color ');
+        case 'red':
             return alert(' red is not so great ');
-        case 'blue' :
+        case 'blue':
             return alert(' blue is second best at most ');
         default:
             return alert(' i do not have a color for that sorry ');
     }
-
-
 }
- console.log(analyzeColor('violet'))
- console.log(analyzeColor('blue'))
- console.log(analyzeColor('red'))
- console.log(analyzeColor('green'))
-
-
+ console.log(analyzeColor('violet'));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the

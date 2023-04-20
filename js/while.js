@@ -1,4 +1,3 @@
-"use strict";
 
 
 let multiple = 2
@@ -12,16 +11,19 @@ while(multiple <= 65536){
 
 let conesLeft = Math.floor(Math.random() * 50) + 50;
 
-do{
+do {
     let conesBought = Math.floor(Math.random() * 5) + 1;
-    if (conesBought <= conesLeft){
+         if(conesBought <= conesLeft){
+        console.log(`customer bought ${conesBought} cones`);
         conesLeft -= conesBought
-        console.log(`${conesLeft} cones have been sold... `)
-    }else {
-        console.log(`if there are enough cones Cannot sell you ${conesBought} cones! i only have ${conesLeft} `)
+        console.log(`${conesLeft} Cones Left! `)
+       }
     }
-    } while(conesLeft > 0)
+    while (conesLeft > 0) {
         console.log("No more cones left to sell.");
+    }
+
+
 
 
 

@@ -1,4 +1,3 @@
-"use strict"
 
 let aNumber = parseFloat(prompt('Pick a number between 1 and 50, that is not even. :'))
 
@@ -20,10 +19,4 @@ for (let i = 1; i<= 49; i++){
     }else{
         console.log('here is an odd number ' + i)
     }
-}
-
-let multiple = 2
-while(multiple <= 65536){
-    console.log(multiple)
-    multiple ++ 
 }

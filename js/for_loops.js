@@ -6,7 +6,6 @@ function showMultiplicationTable(){
     }
 }
 showMultiplicationTable()
-
     for(let i = 0; i < 10; i++){
     let randomNum = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
         if(randomNum % 2 === 0 ){

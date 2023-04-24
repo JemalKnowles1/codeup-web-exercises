@@ -28,7 +28,7 @@ let names = ["anakin", "ahsoka", "revan", "Obi"]
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
-    for(let i = names.length +1; i < 0; i++){
+    for(let i = 0; i < names.length; i++){
         console.log(names[i])
     }
     /**
@@ -57,4 +57,21 @@ let names = ["anakin", "ahsoka", "revan", "Obi"]
     console.log(names.indexOf('ahsoka'))
     console.log(names.indexOf('Obi'))
     console.log(names.length -1)
+
+    function  first(arr){
+        return arr[0]
+     }
+     console.log(first(1,2,3,4))
+
+    function second(arr){
+        return arr[1]
+    }
+    console.log(second(1,2,3,4))
+
+    function last(arr){
+        return [arr.length -1]
+    }
+    console.log(last(1,2,3,4,5))
+
+
 })();

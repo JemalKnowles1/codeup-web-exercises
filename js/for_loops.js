@@ -1,12 +1,14 @@
 "use strict"
 
-function showMultiplicationTable(){
+function showMultiplicationTable(num){
     for(let i = 0; i <= 10; i++){
-        console.log(`${5} * ${i} = ${5 * i}`);
+        console.log(`${num} * ${i} = ${num * i}`);
     }
 }
-showMultiplicationTable()
+showMultiplicationTable(1)
     for(let i = 0; i < 10; i++){
+        //math.floor rounds down
+        //math.random generates a number
     let randomNum = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
         if(randomNum % 2 === 0 ){
             console.log(randomNum + ' is even')

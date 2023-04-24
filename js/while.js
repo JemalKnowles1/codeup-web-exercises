@@ -22,9 +22,3 @@ do {
     while (conesLeft > 0) {
         console.log("No more cones left to sell.");
     }
-
-
-
-
-
-

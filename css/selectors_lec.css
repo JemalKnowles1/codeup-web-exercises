@@ -1,0 +1,64 @@
+body {
+    background-color: burlywood;
+    /*background-image: url("../img/android-wallpaper-city-dark-248159.jpg");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: darksalmon;
+}
+
+#container {
+    background: rgba(23, 62, 134, .8);
+}
+
+p {
+    color: crimson;
+    text-indent: 25px;
+}
+
+.heading {
+    color: steelblue;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#main-heading {
+    color: #474973;
+    text-decoration: underline firebrick;
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#main-heading, .reminder {
+    background: yellow;
+}
+
+/*.make-bigger {*/
+/*Expand Down*/
+/*Expand Up*/
+/*	@@ -61,4 +77,25 @@ a:hover {*/
+
+a:active {
+    color: black;
+}
+
+#cheese {
+    width: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: upper-roman;
+    color: orangered;
+}
+
+li {
+    color: palegreen;
+}
+
+ol li {
+    color: inherit;
+}

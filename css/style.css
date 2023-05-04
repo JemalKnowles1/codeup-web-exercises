@@ -1,0 +1,44 @@
+.main-heading {
+    color: #F2BB05; /* single line comment */
+    text-decoration: underline;
+    text-align: center
+
+}
+.fancy-header{
+    color: #F2BB05;
+    text-align: center ;
+}
+body {
+    background-color: azure;
+    background-image: url("../img/starwars.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: transparent;
+    font-family: "Hiragino Maru Gothic ProN";
+}
+table th, td{
+    border: 1px solid #F2BB05;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #6f061b;
+    color: #F2BB05;
+}
+ul, ol {
+    text-align: center;
+    color: #F2BB05;
+    list-style-type: disc;
+}
+a{
+    font-style: oblique;
+    text-align: center;
+}
+a:link{
+    color: #F2BB05;
+}
+a:visited{
+    color: #F2BB05;
+}
+a:hover{
+    color: #F2BB05;
+}

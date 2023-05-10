@@ -1,0 +1,81 @@
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Remove default padding and margin from body element */
+body {
+    margin: 0;
+}
+
+nav{
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+}
+header nav a{
+    color: black;
+    display: inline-block;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    padding: 2em .5em;
+}
+/* Remove default styles from unordered list */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Apply styles to the navbar */
+.navbar {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Apply styles to the logo */
+header .nav-logo{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+header nav .nav-logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: 0.2em 0;
+}
+header nav .nav-logo li {
+    width: 45%;
+}
+
+
+/* Apply styles to the navigation links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.2em;
+    color: black;
+    text-decoration: none;
+}
+
+/* Change link color on hover */
+.nav-right a:hover {
+    color: blue;
+}
+.nac-left a:hover{
+    color: blue
+}

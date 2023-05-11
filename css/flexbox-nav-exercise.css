@@ -30,13 +30,13 @@ header nav ul {
 }
 
 /* Apply styles to the navbar */
-.navbar {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    font-family: 'Work Sans', sans-serif;
-}
+/*.navbar {*/
+/*    display: inline-block;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    padding: 1rem;*/
+/*    font-family: 'Work Sans', sans-serif;*/
+/*}*/
 
 /* Apply styles to the logo */
 header .nav-logo{
@@ -46,8 +46,10 @@ header .nav-logo{
 }
 header nav .nav-logo a {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     padding: 0.2em 0;
+    text-align: center;
+    align-items: center;
 }
 header nav .nav-logo li {
     width: 45%;
@@ -67,7 +69,7 @@ header nav .nav-logo li {
 
 .nav-links a {
     display: inline-block;
-    padding: 0.2em;
+    padding: .2em .5em;
     color: black;
     text-decoration: none;
 }
@@ -76,6 +78,6 @@ header nav .nav-logo li {
 .nav-right a:hover {
     color: blue;
 }
-.nac-left a:hover{
-    color: blue
+.nav-left a:hover{
+    color: blue;
 }

@@ -20,11 +20,12 @@ $(function () {
     document.addEventListener('keydown', (event) => {
         // Add the pressed key to the user input array
         userInput.push(event.key);
-
         // Check if the user input matches the Konami Code
-        if (userInput.length === konamiCode.length && userInput.every((key, index) => key === konamiCode[index])) {
+        if (userInput.length === konamiCode.length) {
+            $("#hedgehog").removeClass("sonic")
+
             // The Konami Code was entered correctly
-            alert('You have added 30 lives! Other ideas:\nChange the background screen.\nPlay a sound.\nBe creative!');
+            alert('You have added 30 lives!');
             // Clear the user input array for future attempts
             userInput = [];
         } else if (userInput.length >= konamiCode.length) {
@@ -32,5 +33,6 @@ $(function () {
             // Clear the user input array
             userInput = [];
         }
+
     });
 });

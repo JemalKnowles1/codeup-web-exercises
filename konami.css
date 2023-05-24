@@ -1,0 +1,19 @@
+
+
+body{
+    background-color: black;
+}
+.sonic{
+    display: none;
+}
+
+#hedgehog{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    width: 100vw;
+}
+h1{
+    text-align: center;
+    color: white;
+}

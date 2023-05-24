@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="konami.css">
 </head>
 <body>
-<h1>Konami Code</h1>
+<h1> Konami Code </h1>
 
+<div id="hedgehog" class="sonic">
 
+    <img src="img/sonic%20gif.gif">
+
+</div>
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
         crossorigin="anonymous"></script>
 <script src="js/konami.js"></script>
 <script>
     "use strict";
 
-    $(document).on("keyup", function(event){
+    $(document).on("keyup", function (event) {
         console.log(event.key)
     });
 

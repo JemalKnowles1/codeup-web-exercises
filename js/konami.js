@@ -23,7 +23,6 @@ $(function () {
         // Check if the user input matches the Konami Code
         if (userInput.length === konamiCode.length) {
             $("#hedgehog").removeClass("sonic")
-
             // The Konami Code was entered correctly
             alert('You have added 30 lives!');
             // Clear the user input array for future attempts
@@ -33,6 +32,5 @@ $(function () {
             // Clear the user input array
             userInput = [];
         }
-
     });
 });

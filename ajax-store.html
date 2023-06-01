@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Online Tool Store</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Add your custom CSS styles here */
+  </style>
 </head>
 <body>
-$END$
+<div class="container">
+  <h1>Online Tool Store</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Stock</th>
+    </tr>
+    </thead>
+    <tbody id="inventoryTableBody">
+    <!-- Inventory data will be appended here -->
+    </tbody>
+  </table>
+  <button id="refreshBtn" class="btn btn-primary">Refresh</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/ajax-store.js"></script>
 </body>
 </html>

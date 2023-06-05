@@ -18,18 +18,18 @@
   const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-74.5, 40], // Replace with the longitude and latitude of your favorite restaurant
+      center: [-74.5, 40],
       zoom: 10 // Initial zoom level
   });
 
   // Add a marker to the map
   var marker = new mapboxgl.Marker()
-          .setLngLat([-74.5, 40]) // Replace with the longitude and latitude of your favorite restaurant
+          .setLngLat([-74.5, 40])
           .addTo(map);
 
   // Add a popup to the marker
   var popup = new mapboxgl.Popup()
-          .setHTML('<h3> Tops Burgers </h3>') // Replace with the name of your favorite restaurant
+          .setHTML('<h3>  </h3>')
           .addTo(map);
 
   marker.setPopup(popup);

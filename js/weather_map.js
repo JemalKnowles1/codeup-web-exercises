@@ -1,58 +1,113 @@
 
-$(document).ready(function() {
-    // Make AJAX request to OpenWeatherMap API for current weather conditions
-    $.ajax({
-        url: 'https://api.openweathermap.org/data/2.5/weather',
-        method: 'GET',
-        data: {
-            q: 'Tampa Bay',
-            appid: 'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=1906777872fa7414e1e324e7062dba58',
-            units: 'metric'
-        },
-        success: function(response) {
-            // Process the response and display current weather conditions
-            const currentWeather = response.weather[0].description;
-            $('#current-weather').text('Current Weather: ' + currentWeather);
-        },
-        error: function(error) {
-            console.log('Error:', error);
-        }
-    });
-    // Make AJAX request to OpenWeatherMap API for five-day forecast
-    $.ajax({
-        url: 'https://api.openweathermap.org/data/2.5/forecast',
-        method: 'GET',
-        data: {
-            q: 'Tampa Bay',
-            appid: 'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=1906777872fa7414e1e324e7062dba58',
-            units: 'metric'
-        },
-        success: function(response) {
-            // Process the response and display the five-day forecast
-            // You can iterate over the forecast data and format it as desired
-            // For example: response.list[0].dt_txt will give you the date and time of the first forecast entry
-        },
-        error: function(error) {
-            console.log('Error:', error);
-        }
-    });
-});
+const timeE1 = document.getElementById("time");
+const dateE1 = document.getElementById('date');
+const currentWeatherItemsE1 = document.getElementById
+('current-weather-items')
+const timezone = document.getElementById('time-zone');
+const countryE1 = document.getElementById('country');
+const weatherForecastE1 = document.getElementById('weather-forecast');
+const currentTempE1 = document.getElementById('current-temp');
 
-mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+/**
+ * Array that gives current date
+ * @type {string[]}
+ */
+const days = ["Sunday", "Monday", "Tuesday",
+    "Wednesday", "Thursday", "Friday", "Saturday"]
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",];
 
-let map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-74.5, 40],
-    zoom: 9
-});
+let API_KEY = "5648fc267c440f05f8cbb4b7e2a43c4a";
+/**
+ * interval that grabs current time
+ */
+setInterval(() => {
+    const time = new Date();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursIn12HrFormat = hour >= 13 ? hour % 12 : hour
+    const minutes = time.getMinutes()
+    const ampm = hour >= 12 ? 'PM' : 'AM'
 
-let marker = new mapboxgl.Marker({
-    draggable: true
-}).setLngLat([-74.5, 40]).addTo(map);
+    timeE1.innerHTML = hoursIn12HrFormat + ':' + minutes + ' ' + `<span id="am-pm">${ampm}</span>`
+    dateE1.innerHTML = days[day] + ', ' + date + ' ' + months[month]
 
-marker.on('dragend', function() {
-    let lngLat = marker.getLngLat();
-    // Use lngLat to make an AJAX request to the OpenWeatherMap API and update the forecast
-    // You can reuse the same AJAX request code from the previous example
-});
+
+}, 1000);
+
+/**
+ * gets current location of user and returns local weather
+ */
+getWeatherData()
+function getWeatherData() {
+    navigator.geolocation.getCurrentPosition((success) => {
+        let {latitude, longitude} = success.coords
+        $.get(`https://api.openweathermap.org/data/2.5/forecast?
+        lat=${latitude}&lon=${longitude}&exclude={part}&appid=${API_KEY}`).then(res => res.json()).then(data => {
+            showWeatherData(data)
+        })
+        });
+}
+
+/**
+ *  grabs current timezone and country data while returning and updating weather
+ * @param data
+ */
+function showWeatherData(data) {
+    let [humidity, pressure, sunrise, sunset, wind_speed,] = data.current
+    timezone.innerHTML = data.timeZone
+    countryE1.innerHTML = data.lat + 'N' + data.lon+'E'
+    currentWeatherItemsE1.innerHTML =
+        `<div class="weather-item">
+    <p>Humidity</p>
+    <p>${humidity}</p>
+        </div>
+    <div class="weather-item">
+        <div>Pressure</div>
+        <div>${pressure}</div>
+    </div>
+    <div class="weather-item">
+        <div>Wind Speed</div>
+        <div>${wind_speed}</div>
+    </div>
+  <div class="weather-item">
+        <div>Sunrise</div>
+        <div>${window.moment(sunrise * 1000).format('HH:mm a')}</div>
+    </div>
+      <div class="weather-item">
+        <div>Sunset</div>
+        <div>${window.moment(sunset*1000).format('HH:mm a')}</div>
+    </div>
+`;
+
+    /**
+     * sets the forecast of future weather
+     * @type {string}
+     */
+
+    let otherDayForecast = ''
+data.daily.forEach((day, idx) => {
+    if(idx === 0){
+        currentTempE1.innerHTML =
+           `<img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"
+                 alt="weather icon" class="w-icon">
+                <div class="other">
+                    <div class="day">Monday</div>
+                    <div class="temp">${day.temp.night}&#176; C</div>
+                    <div class="temp">${day.temp.day}&#176; C</div>
+                </div>`
+    }else{
+        otherDayForecast +=
+            `<div class="weather-forecast-item">
+                <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
+                <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"
+                     alt="weather icon" class="w-icon">
+                    <div class="temp">Night - ${day.temp.night}&#176; C</div>
+                    <div class="temp">Day - ${day.temp.day}&#176; C</div>
+            </div>`
+    }
+    })
+    weatherForecastE1.innerHTML = otherDayForecast
+}

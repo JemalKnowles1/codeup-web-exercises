@@ -37,6 +37,9 @@
         <div class="place-container">
             <div class="time-zone" id="time-zone">Weather Map</div>
             <div class="country" id="country">United States</div>
+            <p id="inputContainer">City: <input type="text" id="cityInput"></p>
+            <button onclick="getInfo()">Search</button>
+            <h2 id="cityName">--Wherever--</h2>
         </div>
     </div>
 </div>
@@ -88,39 +91,6 @@
         </div>
     </div>
 </div>
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiamVtYWxrbm93bGVzMSIsImEiOiJjbGlhZDV2eXowMjJ4M2NueHpqdGtqbXpvIn0.F8qlLJ2QHHA7CuBKaUDTGQ';
-const map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11',
-center: [-74.5, 40],
-zoom: 10
-});
-
-// Add a marker to the map
-var marker = new mapboxgl.Marker()
-.setLngLat([-74.5, 40]) //
-.addTo(map);
-
-// Add a popup to the marker
-var popup = new mapboxgl.Popup()
-.setHTML('<h3></h3>')
-.addTo(map);
-
-marker.setPopup(popup);
-
-// Redraw the map at different zoom levels
-map.on('load', function () {
-var zoomLevels = [5, 15, 20];
-
-zoomLevels.forEach(function (zoom) {
-setTimeout(function () {
-map.setZoom(zoom);
-}, 2000 * zoom);
-});
-});
-</script>
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -129,6 +99,5 @@ map.setZoom(zoom);
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/keys.js"></script>
 <script src="js/weather_map.js"></script>
-
 </body>
 </html>

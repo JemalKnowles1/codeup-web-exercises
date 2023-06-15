@@ -23,6 +23,7 @@ body{
 }
 .date-container{
     font-weight: 100;
+    justify-content: center;
 }
 .date-container .time{
     font-size: 70px;
@@ -63,7 +64,7 @@ body{
 }
 .five-day-forecast{
     background: rgba(24,24,27,0.8);
-    padding: 25px;
+    padding: 50px;
     position: fixed;
     bottom: 0;
     display: flex;

@@ -1,70 +1,25 @@
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body{
-    background: url("/img/karsten-winegeart-xrvqOSUqLIY-unsplash.jpg") no-repeat;
+    background: url("/img/marek-piwnicki-_kY6w94o-f0-unsplash.jpg") no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 100vh;
 }
-
-.container{
+.weather-forecast-search{
     padding: 20px 70px;
     color: white;
-}
-.current-weather{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.date-container{
-    font-weight: 100;
-    justify-content: center;
-}
-.date-container .time{
-    font-size: 70px;
-}
-.date-container #am-pm{
-    font-size: 30px;
-    margin-left: 20px;
-}
-.date-container .date{
-    font-size: 30px;
-}
-.place-container{
-    text-align: end;
-}
 
-.place-container .time-zone{
-    font-size: 30px;
-    font-weight: 100;
-}
-.place-container .country{
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.current-weather .others{
-    display: flex;
-    flex-direction: column;
-    background: rgba(24,24,27,0.6);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px 0;
-    border: 1px solid #eee;
-
-}
-.current-weather .others .weather-item{
-    display: flex;
-    justify-content: space-between;
-}
 .five-day-forecast{
     background: rgba(24,24,27,0.8);
-    padding: 50px;
+    padding: 25px;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -72,9 +27,24 @@ body{
     width: 100%;
     align-items: center;
     justify-content: center;
+    transition: left;
 }
+.date-container{
+    font-weight: 100;
+    text-align: center;
+}
+.date-container .time{
+    font-size: 100px;
+}
+.date-container #am-pm{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.date-container .date{
+    font-size: 20px;
 
-.five-day-forecast .today{
+}
+.five-day-forecast .weather-forecast-item{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,25 +52,17 @@ body{
     margin: 0 10px;
     border-radius: 10px;
     padding: 15px;
-
-
 }
-.five-day-forecast .today .day{
+.five-day-forecast .date-container .weather-forecast{
     display: flex;
+    justify-content: space-between;
+}
+.five-day-forecast .weather{
     padding: 5px 15px;
     background: #3c3c44;
     border-radius: 50px;
     text-align: center;
-
 }
-.five-day-forecast .today .temp{
-    font-size: 18px;
-    padding-top: 15px;
-}
-.five-day-forecast .weather-forecast{
-    display: flex;
-}
-
 .weather-forecast .weather-forecast-item{
     display: flex;
     flex-direction: column;
@@ -111,16 +73,23 @@ body{
     border-radius: 10px;
     padding: 15px;
 }
-.weather-forecast .weather-forecast-item .day{
-    padding: 5px 15px;
-    background: #3c3c44;
-    border-radius: 50px;
+.five-day-forecast .minValues{
     text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    height: 25px;
+    width: 85px;
+    margin: 0 0 5px 5px;
 }
-.weather-forecast .weather-forecast-item .temp{
-    font-weight: 100;
+.five-day-forecast .maxValues{
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    height: 25px;
+    width: 85px;
+    margin: 0 0 5px 5px;
 }
-@media only screen and (max-width:730px){
+@media only screen and (max-width: 730px){
     .container{
         padding: 20px;
     }
@@ -129,33 +98,18 @@ body{
         align-items: normal;
         overflow-y: scroll;
     }
-    .five-day-forecast .today .temp{
-        font-size: 23px;
-    }
-    .date-container .time{
-        font-size: 50px;
-    }
-    .date-container #am-pm{
-        font-size: 20px;
-    }
-    .date-container .date{
-        font-size: 20px;
-    }
-    .place-container{
-        text-align: end;
-        margin-top: 15px;
-    }
-    .place-container .time-zone{
-        font-size: 20px;
-    }
-    .current-weather .others{
-        padding: 12px;
-    }
-    .current-weather .others .weather-item{
-        font-size: 14px;
-    }
-
-
+}
+.date-container .time{
+    font-size: 50px;
+}
+.date-container #am-pm{
+    font-size: 20px;
+}
+.date-container .date{
+    font-size: 20px;
+}
+.weather-forecast-search{
+    font-size: 12px;
 }
 
 @media only screen and (max-width: 1000px){
@@ -164,5 +118,4 @@ body{
         overflow-y: scroll;
     }
 }
-
 
